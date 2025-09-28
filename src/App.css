@@ -1,38 +1,212 @@
-.App {
+/* Global Styles */
+body {
+  background: linear-gradient(to right, #acb6e5);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+}
+
+.header p {
+  font-size: 1.2rem;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.navbar button {
+  padding: 10px 25px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.navbar button.active-tab,
+.navbar button:hover {
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Cards */
+.card {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  margin-bottom: 30px;
+}
+
+/* Labels & Inputs */
+.label {
+  font-weight: 600;
+  margin-top: 10px;
+  display: block;
+}
+
+select,
+input[type="date"],
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Slots */
+.slots-section h3 {
+  margin-top: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.slot-btn {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #f0f8ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slot-btn:hover {
+  background: #cfe8fc;
+  transform: scale(1.05);
+}
+
+.slot-btn.selected {
+  background: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+
+.slot-btn.booked {
+  background: #ddd;
+  color: #888;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+/* Booking Form */
+.appointment-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.appointment-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.appointment-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Confirmation */
+.confirmation {
+  margin-top: 15px;
+  color: green;
+  font-weight: bold;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Admin Panel Table */
+.admin-panel table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.admin-panel th,
+.admin-panel td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.admin-panel th {
+  background-color: #f0f0f0;
+}
+
+.logout-btn {
+  background-color: #ff5722;
   color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  float: right;
 }
 
-.App-link {
-  color: #61dafb;
+.logout-btn:hover {
+  background-color: #e64a19;
+}
+/* Popup Message */
+.popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  animation: popupFade 0.5s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes popupFade {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
+
+/* Keep your previous CSS for layout, navbar, forms, etc. */
